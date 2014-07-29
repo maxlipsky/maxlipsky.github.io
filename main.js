@@ -1,5 +1,9 @@
 (function(){
 
+    document.body.addEventListener('touchmove',function(event){
+        event.preventDefault();
+    },false);
+
     var parentEl = document.body,
         newCanvas = document.createElement('canvas'),
         winWidth = document.documentElement.clientWidth,
@@ -33,7 +37,7 @@
         draw(x, y, side, steps);
     };
 
-    canvas.addEventListener('touchmove',draw(x, y, side, steps), false);
+    // canvas.addEventListener('touchmove',draw(x, y, side, steps), false);
 
     function draw(x, y, side, steps){
 
