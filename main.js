@@ -33,6 +33,10 @@
         draw(x, y, side, steps);
     };
 
+    canvas.addEventListener('touchstart',draw, false);
+    canvas.addEventListener('touchmove',draw, false);
+    canvas.addEventListener('touchend',draw, false);
+
     function draw(x, y, side, steps){
 
         var currentScroll = window.pageYOffset || document.documentElement.scrollTop,
