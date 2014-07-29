@@ -29,16 +29,14 @@
 
     draw(x, y, side, steps);
 
-    document.addEventListener("touchmove", ScrollStart, false);
+    document.addEventListener("touchmove", function(e){
+        var x = e.touches[0].pageX,
+            y = e.touches[0].pageY;
+        draw(x, y, side, steps);
+    }, false);
     document.addEventListener('scroll', Scroll, false);
 
     function Scroll() {
-        draw(x, y, side, steps);
-    }
-
-    function ScrollStart() {
-        var x = e.touches[0].pageX,
-            y = e.touches[0].pageY;
         draw(x, y, side, steps);
     }
 
