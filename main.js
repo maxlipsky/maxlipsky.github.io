@@ -14,14 +14,14 @@
     var canvas = document.getElementById('canvas'),
         context = canvas.getContext('2d'),
 
-        side = winWidth / 10,
-        steps = 100,
-        x = winWidth / 2,
-        y = 40,
+        side = winWidth / 10,       // сторона ромба и треугольника
+        steps = 100,                // кол-во шагов анимации
+        x = winWidth / 2,           // начальная координата X
+        y = 40,                     // начальная координата Y
 
-        R = side * Math.sqrt(3)/3,
-        m = 1.29, // поправка для Безье
-        deltaM = 2 * 0.435 / steps, // 1.29 - 0.84 приращение для кривых Безье
+        R = side * Math.sqrt(3)/3,  // Радиус окружности
+        m = 1.29,                   // поправка для Безье
+        deltaM = 2 * 0.435 / steps, // приращение для кривых Безье, диапазон 1.29 - 0.84
 
         startColor = randomColor(),
         endColor = randomColor(),
@@ -29,21 +29,9 @@
 
     draw(x, y, side, steps);
 
-    document.addEventListener("touchmove", ScrollOnIOS, false);
-    document.addEventListener('scroll', Scroll, false);
-
-    function ScrollOnIOS(e) {
-        var x = e.touches[0].pageX,
-            y = e.touches[0].pageY;
+    document.addEventListener('scroll', function(){
         draw(x, y, side, steps);
-        e.preventDefault();
-    }
-
-    function Scroll() {
-        draw(x, y, side, steps);
-    }
-
-
+    }, false);
 
 //    document.addEventListener('touchmove', function(e){
 //        var x = e.touches[0].pageX,
