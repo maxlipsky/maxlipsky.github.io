@@ -33,9 +33,7 @@
         draw(x, y, side, steps);
     };
 
-    canvas.addEventListener('touchstart',draw, false);
-    canvas.addEventListener('touchmove',draw, false);
-    canvas.addEventListener('touchend',draw, false);
+    canvas.addEventListener('touchmove',draw(x, y, side, steps), false);
 
     function draw(x, y, side, steps){
 
