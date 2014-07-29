@@ -29,16 +29,27 @@
 
     draw(x, y, side, steps);
 
-    window.onscroll = function () {
-        draw(x, y, side, steps);
-    };
+    document.addEventListener("touchmove", ScrollStart, false);
+    document.addEventListener('scroll', Scroll, false);
 
-    document.addEventListener('touchmove', function(e){
+    function Scroll() {
+        draw(x, y, side, steps);
+    }
+
+    function ScrollStart() {
         var x = e.touches[0].pageX,
             y = e.touches[0].pageY;
         draw(x, y, side, steps);
-        e.preventDefault();
-    }, false);
+    }
+
+
+
+//    document.addEventListener('touchmove', function(e){
+//        var x = e.touches[0].pageX,
+//            y = e.touches[0].pageY;
+//        draw(x, y, side, steps);
+//        e.preventDefault();
+//    }, false);
 
     function draw(x, y, side, steps){
 
