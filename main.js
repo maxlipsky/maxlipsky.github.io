@@ -29,7 +29,7 @@
 
     draw(x, y, side, steps);
 
-    document.addEventListener("touchmove", function(e){
+    document.addEventListener("touchstart", function(e){
         var x = e.touches[0].pageX,
             y = e.touches[0].pageY;
         draw(x, y, side, steps);
