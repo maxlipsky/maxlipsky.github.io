@@ -42,6 +42,7 @@
     document.addEventListener('touchstart', function(e) {
         var touchObj = e.changedTouches[0],
             startTouchScroll = parseInt(touchObj.clientY);
+        alert(startTouchScroll);
         e.preventDefault();
     }, false);
 
@@ -53,8 +54,6 @@
     }, false);
 
     document.addEventListener('touchend', function(e) {
-
-        alert(currentTouchScroll);
 
         e.preventDefault();
     }, false);
