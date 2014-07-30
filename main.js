@@ -58,9 +58,10 @@
     }, false);
 
     document.addEventListener('touchend', function(e) {
-        if (currentTouchScroll > 0 && currentTouchScroll < document.documentElement.scrollHeight - document.documentElement.clientHeight) {
-            endTouchScroll = currentTouchScroll;
-        }
+//        if (currentTouchScroll >= 0 && currentTouchScroll <= document.documentElement.scrollHeight - document.documentElement.clientHeight) {
+//            endTouchScroll = currentTouchScroll;
+//        }
+          endTouchScroll = window.pageYOffset;
         e.preventDefault();
     }, false);
 
