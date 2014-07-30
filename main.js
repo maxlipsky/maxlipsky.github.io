@@ -35,7 +35,6 @@
 
     document.addEventListener('scroll', function(){
         var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        console.log(currentScroll);
         draw(x, y, side, steps, currentScroll);
     }, false);
 
@@ -58,10 +57,9 @@
     }, false);
 
     document.addEventListener('touchend', function(e) {
-//        if (currentTouchScroll >= 0 && currentTouchScroll <= document.documentElement.scrollHeight - document.documentElement.clientHeight) {
-//            endTouchScroll = currentTouchScroll;
-//        }
-          endTouchScroll = window.pageYOffset;
+        if (currentTouchScroll >= 0 && currentTouchScroll <= document.documentElement.scrollHeight - document.documentElement.clientHeight) {
+            endTouchScroll = currentTouchScroll;
+        }
         e.preventDefault();
     }, false);
 
