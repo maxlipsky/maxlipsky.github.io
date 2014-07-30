@@ -33,23 +33,14 @@
 //        draw(x, y, side, steps);
 //    }, false);
 
-    document.addEventListener('touchmove', function(e){
-        var x = e.touches[0].pageX,
-            y = e.touches[0].pageY;
-
-        alert('x & y = ' + x + ' ' + y);
-
-        e.preventDefault();
-    }, false);
-
-    document.addEventListener('touchend', function(e){
-        var x = e.touches[0].pageX,
-            y = e.touches[0].pageY;
-
-        alert('x & y = ' + x + ' ' + y);
-
-        e.preventDefault();
-    }, false);
+//    document.addEventListener('touchmove', function(e){
+//        var x = e.touches[0].pageX,
+//            y = e.touches[0].pageY;
+//
+//        alert('x & y = ' + x + ' ' + y);
+//
+//        e.preventDefault();
+//    }, false);
 
     function draw(x, y, side, steps){
 
