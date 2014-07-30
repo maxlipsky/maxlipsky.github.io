@@ -33,7 +33,7 @@
 //        draw(x, y, side, steps);
 //    }, false);
 
-    document.addEventListener('touchstart', function(e){
+    document.addEventListener('touchmove', function(e){
         var x = e.touches[0].pageX,
             y = e.touches[0].pageY;
 
