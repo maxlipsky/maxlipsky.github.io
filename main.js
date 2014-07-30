@@ -39,18 +39,24 @@
 
 
     document.addEventListener('touchstart', function(e) {
-        var touchObj = e.changedTouches[0],
-            startTouchScroll = window.pageYOffset || document.documentElement.scrollTop;
+        var startTouchScroll = window.pageYOffset || document.documentElement.scrollTop;
         e.preventDefault();
     }, false);
 
     document.addEventListener('touchmove', function(e) {
         var touchObj = e.changedTouches[0],
             currentTouchScroll = startTouchScroll - parseInt(touchObj.pageY);
-        alert(startTouchScroll, currentTouchScroll);
+        window.scrollTo(0, currentTouchScroll);
         draw(x, y, side, steps, currentTouchScroll);
         e.preventDefault();
     }, false);
+
+//    document.addEventListener('touchend', function(e) {
+//        var touchObj = e.changedTouches[0],
+//            currentTouchScroll = startTouchScroll - parseInt(touchObj.pageY);
+//        draw(x, y, side, steps, currentTouchScroll);
+//        e.preventDefault();
+//    }, false);
 
     function draw(x, y, side, steps, currentScroll){
 
