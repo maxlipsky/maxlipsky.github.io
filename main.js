@@ -27,7 +27,8 @@
         endColor = randomColor(),
         startColorStep = 0,
         currentScroll = window.pageYOffset || document.documentElement.scrollTop,
-        startTouchScroll = 0;
+        startTouchScroll = 0,
+        currentTouchScroll = 0;
 
     draw(x, y, side, steps, currentScroll);
 
@@ -52,8 +53,6 @@
     }, false);
 
     document.addEventListener('touchend', function(e) {
-        var touchObj = e.changedTouches[0],
-            currentTouchScroll = startTouchScroll - parseInt(touchObj.clientY);
 
         alert(currentTouchScroll);
 
