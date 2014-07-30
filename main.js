@@ -51,11 +51,14 @@
         e.preventDefault();
     }, false);
 
-//    document.addEventListener('touchend', function(e) {
-//        var touchObj = e.changedTouches[0],
-//            currentTouchScroll = startTouchScroll - parseInt(touchObj.pageY);
-//        e.preventDefault();
-//    }, false);
+    document.addEventListener('touchend', function(e) {
+        var touchObj = e.changedTouches[0],
+            currentTouchScroll = startTouchScroll - parseInt(touchObj.pageY);
+
+        alert(currentTouchScroll);
+
+        e.preventDefault();
+    }, false);
 
     function draw(x, y, side, steps, currentScroll){
 
