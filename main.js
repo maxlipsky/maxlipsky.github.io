@@ -52,12 +52,13 @@
         currentTouchScroll = startTouchScroll - parseInt(touchObj.clientY);
         if (currentTouchScroll >= 0 && currentTouchScroll <= document.documentElement.scrollHeight - document.documentElement.clientHeight) {
             draw(x, y, side, steps, currentTouchScroll);
+            endTouchScroll = currentTouchScroll;
         }
         e.preventDefault();
     }, false);
 
     document.addEventListener('touchend', function(e) {
-            endTouchScroll = currentTouchScroll;
+            // endTouchScroll = currentTouchScroll;
         e.preventDefault();
     }, false);
 
