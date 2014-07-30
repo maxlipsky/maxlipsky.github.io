@@ -47,7 +47,7 @@
 
     document.addEventListener('touchmove', function(e) {
         var touchObj = e.changedTouches[0],
-            currentTouchScroll = parseInt(touchObj.clientY) - startTouchScroll;
+            currentTouchScroll = parseInt(touchObj.clientY) * (-1);
         draw(x, y, side, steps, currentTouchScroll);
         e.preventDefault();
     }, false);
