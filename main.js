@@ -42,7 +42,7 @@
     document.addEventListener('touchstart', function(e) {
         var touchObj = e.changedTouches[0];
 
-        startTouchScroll = parseInt(touchObj.clientY);
+        startTouchScroll = parseInt(touchObj.clientY) + window.pageYOffset;
         e.preventDefault();
     }, false);
 
