@@ -88,8 +88,6 @@
 
             delta = createDelta(square, triangle, steps);
 
-        alert(maxScroll);
-
         colorMixer(step);
 
         if ( step <= steps / 2 ) {
