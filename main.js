@@ -15,7 +15,7 @@
         context = canvas.getContext('2d'),
 
         side = winWidth / 10,       // сторона ромба и треугольника
-        steps = 50,                // кол-во шагов анимации
+        steps = 50,                 // кол-во шагов анимации
         x = winWidth / 2,           // начальная координата X
         y = 40,                     // начальная координата Y
 
@@ -29,16 +29,18 @@
 
     draw(x, y, side, steps);
 
-    document.addEventListener('scroll', function(){
-        draw(x, y, side, steps);
-    }, false);
-
-//    document.addEventListener('touchmove', function(e){
-//        var x = e.touches[0].pageX,
-//            y = e.touches[0].pageY;
+//    document.addEventListener('scroll', function(){
 //        draw(x, y, side, steps);
-//        e.preventDefault();
 //    }, false);
+
+    document.addEventListener('touchstart', function(e){
+        var x = e.touches[0].pageX,
+            y = e.touches[0].pageY;
+
+        alert('x & y = ' + x + ' ' + y);
+
+        e.preventDefault();
+    }, false);
 
     function draw(x, y, side, steps){
 
