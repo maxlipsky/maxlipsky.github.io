@@ -26,7 +26,8 @@
         startColor = randomColor(),
         endColor = randomColor(),
         startColorStep = 0,
-        currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        currentScroll = window.pageYOffset || document.documentElement.scrollTop,
+        startTouchScroll = 0;
 
     draw(x, y, side, steps, currentScroll);
 
@@ -35,9 +36,16 @@
         draw(x, y, side, steps, currentScroll);
     }, false);
 
+
+    document.addEventListener('touchstart', function(e) {
+        var touchObj = e.changedTouches[0],
+            startTouchScroll = parseInt(touchObj.pageY);
+        e.preventDefault();
+    }, false);
+
     document.addEventListener('touchmove', function(e) {
         var touchObj = e.changedTouches[0],
-            currentTouchScroll = parseInt(touchObj.pageY);
+            currentTouchScroll = startTouchScroll - parseInt(touchObj.pageY);
         draw(x, y, side, steps, currentTouchScroll);
         e.preventDefault();
     }, false);
