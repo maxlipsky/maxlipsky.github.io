@@ -29,9 +29,9 @@
 
     draw(x, y, side, steps);
 
-//    document.addEventListener('scroll', function(){
-//        draw(x, y, side, steps);
-//    }, false);
+    document.addEventListener('scroll', function(){
+        draw(x, y, side, steps);
+    }, false);
 
 //    document.addEventListener('touchmove', function(e){
 //        var x = e.touches[0].pageX,
