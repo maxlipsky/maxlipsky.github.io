@@ -57,11 +57,6 @@
         e.preventDefault();
     }, false);
 
-    document.addEventListener('touchend', function(e) {
-            // endTouchScroll = currentTouchScroll;
-        e.preventDefault();
-    }, false);
-
     function draw(x, y, side, steps, currentScroll){
 
         var maxScroll = document.documentElement.scrollHeight - document.documentElement.clientHeight,
