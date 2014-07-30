@@ -28,7 +28,8 @@
         startColorStep = 0,
         currentScroll = window.pageYOffset || document.documentElement.scrollTop,
         startTouchScroll = 0,
-        currentTouchScroll = 0;
+        currentTouchScroll = 0,
+        endTouchScroll = 0;
 
     draw(x, y, side, steps, currentScroll);
 
@@ -42,7 +43,7 @@
     document.addEventListener('touchstart', function(e) {
         var touchObj = e.changedTouches[0];
 
-        startTouchScroll = parseInt(touchObj.clientY);
+        startTouchScroll = parseInt(touchObj.clientY) + endTouchScroll;
         e.preventDefault();
     }, false);
 
@@ -50,13 +51,12 @@
         var touchObj = e.changedTouches[0];
             currentTouchScroll = startTouchScroll - parseInt(touchObj.clientY);
 
-        window.scrollTo(0, currentTouchScroll);
         draw(x, y, side, steps, currentTouchScroll);
         e.preventDefault();
     }, false);
 
     document.addEventListener('touchend', function(e) {
-
+        endTouchScroll = currentTouchScroll;
         e.preventDefault();
     }, false);
 
