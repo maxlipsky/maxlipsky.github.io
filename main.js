@@ -47,11 +47,9 @@
     }, false);
 
     document.addEventListener('touchmove', function(e) {
-        var touchObj = e.changedTouches[0],
+        var touchObj = e.changedTouches[0];
             currentTouchScroll = startTouchScroll - parseInt(touchObj.clientY);
-            currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        window.scrollTo(0, currentTouchScroll);
-        draw(x, y, side, steps, currentScroll);
+        draw(x, y, side, steps, currentTouchScroll);
         e.preventDefault();
     }, false);
 
