@@ -33,13 +33,14 @@
 
     document.addEventListener('scroll', function(){
         var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        console.log(currentScroll);
         draw(x, y, side, steps, currentScroll);
     }, false);
 
 
     document.addEventListener('touchstart', function(e) {
         var touchObj = e.changedTouches[0],
-            startTouchScroll = parseInt(touchObj.pageY);
+            startTouchScroll = window.pageYOffset || document.documentElement.scrollTop;
         e.preventDefault();
     }, false);
 
