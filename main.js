@@ -50,8 +50,9 @@
     document.addEventListener('touchmove', function(e) {
         var touchObj = e.changedTouches[0];
             currentTouchScroll = startTouchScroll - parseInt(touchObj.clientY);
-
-        draw(x, y, side, steps, currentTouchScroll);
+        if (currentTouchScroll >= 0) {
+            draw(x, y, side, steps, currentTouchScroll);
+        }
         e.preventDefault();
     }, false);
 
