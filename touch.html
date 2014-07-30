@@ -22,7 +22,7 @@
 
         box1.addEventListener('touchmove', function(e){
             var touchobj = e.changedTouches[0] // reference first touch point for this event
-            var dist = parseInt(touchobj.clientY) - startx
+            var dist = parseInt(touchobj.pageY) - startx
             statusdiv.innerHTML = 'Status: touchmove<br /> Vertical distance traveled: ' + dist + 'px'
             e.preventDefault()
         }, false)
