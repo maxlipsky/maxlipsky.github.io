@@ -14,14 +14,14 @@
     var canvas = document.getElementById('canvas'),
         context = canvas.getContext('2d'),
 
-        side = winWidth / 10,       // сторона ромба и треугольника
-        steps = 50,                 // кол-во шагов анимации
-        x = winWidth / 2,           // начальная координата X
-        y = 40,                     // начальная координата Y
+        side = winWidth / 10,       // side
+        steps = 50,                 // animation steps
+        x = winWidth / 2,           // start X
+        y = 40,                     // start Y
 
-        R = side * Math.sqrt(3)/3,  // Радиус окружности
-        m = 1.29,                   // поправка для Безье
-        deltaM = 2 * 0.435 / steps, // приращение для кривых Безье, диапазон 1.29 - 0.84
+        R = side * Math.sqrt(3)/3,  // circle radius
+        m = 1.29,                   // amendment to Beziers curves
+        deltaM = 2 * 0.435 / steps, // increment for Bezier curves, range 1.29 - 0.84
 
         startColor = randomColor(),
         endColor = randomColor(),
