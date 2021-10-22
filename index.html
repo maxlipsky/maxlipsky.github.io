@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test canvas</title>
+<!--    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>-->
+    <meta charset=utf-8 />
     <style>
-        #canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-        }
         body {
-            background-color: #eee;
-            height: 2000px;
-            margin: 0;
-            padding: 0;
+            background:#ccc;
+            font-family: 'Arial', cursive;
+            font-weight:400;
+        }
+        body > div {
+            padding:50px;
         }
     </style>
 </head>
-<body>
-    <h2>Scroll fast</h2>
-    <div>Test canvas 2</div>
+<body id="copy">
+
+<div>
+    <div class="copy">
+        <article>
+            Pie applicake sugar plum candy canes fruitcake chocolate cake halvah. Gummi bears oat cake chocolate cake. Dessert sweet marzipan. Macaroon ice cream fruitcake pudding oat cake gummi bears gummies. Gummi bears tootsie roll.
+        </article>
+        <h1>HERE: <span id="paste"></span></h1>
+    </div>
+</div>
+<script>
+  document.getElementById('copy').focus();
+
+  document.getElementById('copy').addEventListener('paste', (e) => {
+    e.preventDefault();
+    const text = (e.originalEvent || e).clipboardData.getData('text/plain');
+    console.log('PASTE: ', text);
+    document.getElementById('paste').innerHTML = text;
+  });
+</script>
 </body>
-<script src="main.js"></script>
 </html>
